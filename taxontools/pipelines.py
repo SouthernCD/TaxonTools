@@ -3,7 +3,7 @@ import sys
 import copy
 from thefuzz import process
 from toolbiox.api.common.genome.blast import outfmt6_read_big
-from toolbiox.lib.common.evolution.tree_operate import Phylo, draw_ascii, remove_pass_node
+from toolbiox.lib.common.evolution.tree_operate import Phylo, draw_ascii, remove_pass_node, get_newick_string
 from toolbiox.lib.common.fileIO import read_list_file
 from toolbiox.lib.common.os import multiprocess_running
 from toolbiox.lib.common.util import printer_list
@@ -180,11 +180,18 @@ def CommonTree_main(args):
         tree = get_common_tree_by_1kp(
             query_list, one_kp_tree_file, acc_to_taxon_map, args.tax_db)
 
+    simple_tree = copy.deepcopy(tree)
+    for clade in simple_tree.find_clades():
+        clade.confidence = None
+        clade.branch_length = None
+
+    simple_tree_string = get_newick_string(simple_tree).replace(":0.00000", "")
+
     if args.output_file is None:
-        draw_ascii(tree)
+        draw_ascii(simple_tree)
     else:
         with open(args.output_file, 'w') as f:
-            Phylo.write(tree, f, 'newick')
+            f.write(simple_tree_string)
 
 
 def ID2Lineage_main(args):
