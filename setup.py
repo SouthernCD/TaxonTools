@@ -26,8 +26,8 @@ setuptools.setup(
     packages=setuptools.find_packages(),
 
     install_requires=[
-        "toolbiox>=0.0.4",
-        "thefuzz",
+        "toolbiox>=0.0.42",
+        # "thefuzz",
     ],
 
     python_requires='>=3.5',

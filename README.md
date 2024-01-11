@@ -7,7 +7,8 @@ TaxonTools can help you use [NCBI Taxonomy database](https://www.ncbi.nlm.nih.go
 pip install taxontools
 ```
 
-## usage
+## Usage
+**prepare**: Download NCBI Taxonomy database and convert it to sqlite format
 
 Download NCBI Taxonomy database
 ```
@@ -18,6 +19,11 @@ Convert NCBI database to sqlite format
 ```
 tar -zxvf taxdump.tar.gz
 TaxonTools StoreTaxonDB ./taxdump taxdump.db
+```
+
+ID2Lineage
+```
+TaxonTools ID2Lineage -q 3701,4530 taxdump.db
 ```
 
 # TODO
