@@ -4,6 +4,12 @@ def get_versions():
 
 versions = [
     {
+        "number": "0.2.1",
+        "features": [
+            "1. update README.md",
+        ],
+    },
+    {
         "number": "0.2.0",
         "features": [
             "1. total rewrite",
