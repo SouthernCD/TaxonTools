@@ -177,6 +177,16 @@ class Taxon(object):
                 sons_id_list.append(i.tax_id)
         return sons_id_list
 
+    def get_offspring(self, taxdump_db_file):
+        offspring_id_list = []
+        record_dict = read_taxon_record_dict_db(taxdump_db_file)
+        for i in record_dict:
+            i = record_dict[i]
+            if self.tax_id in [j[0] for j in i.lineage]:
+                if not i.tax_id == self.tax_id:
+                    offspring_id_list.append(i.tax_id)
+        return offspring_id_list
+
 
 def build_taxon_database(taxdump_tar_gz_file, full_name_class=False):
     """
@@ -469,6 +479,3 @@ if __name__ == '__main__':
     # get common tree
     tax_id_list = ['3702', '4128', '4081']
     common_tree = get_common_tree(tax_id_list, taxdump_db_file)
-
-
-

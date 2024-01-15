@@ -4,6 +4,12 @@ def get_versions():
 
 versions = [
     {
+        "number": "0.2.2",
+        "features": [
+            "1. add get_offspring function in Taxon",
+        ],
+    },
+    {
         "number": "0.2.1",
         "features": [
             "1. update README.md",
