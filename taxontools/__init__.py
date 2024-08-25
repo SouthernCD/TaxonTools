@@ -1,1 +1,1 @@
-from taxontools.src.taxon import *
+from .src.taxon import *

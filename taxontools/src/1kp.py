@@ -1,7 +1,6 @@
-from Bio.Phylo.BaseTree import Clade
-from toolbiox.lib.common.evolution.tree_operate import Clade, Phylo, reroot_by_outgroup_clade, add_clade_name, lookup_by_names, get_MRCA, remove_given_node_from_tree
-from toolbiox.lib.common.fileIO import tsv_file_dict_parse
-from taxontools.src.taxon import read_taxon_record_dict_db
+from yxtree import Clade, Phylo, reroot_by_outgroup_clade, add_clade_name, lookup_by_names, get_MRCA, remove_given_node_from_tree
+from yxutil import tsv_file_dict_parse
+from .taxon import read_taxon_record_dict_db
 
 # use 1kp
 def load_one_kp_tree(one_kp_tree_file, acc_to_taxon_map):

@@ -1,22 +1,19 @@
 from Bio.Phylo.BaseTree import Tree, Clade
-from itertools import combinations
-from mlxtend.evaluate import permutation_test
-from scipy import stats
-from toolbiox.lib.common.evolution.tree_operate import Clade, Phylo, reroot_by_outgroup_clade, add_clade_name, lookup_by_names, get_MRCA, remove_given_node_from_tree, remove_pass_node, get_offspring, draw_ascii, get_parent, get_ancestors, get_sons
-from toolbiox.lib.common.fileIO import tsv_file_dict_parse
-from toolbiox.lib.common.math.set import merge_subset
-from toolbiox.lib.common.util import printer_list
-from toolbiox.lib.xuyuxing.base.common_command import log_print
-from toolbiox.lib.xuyuxing.math.lcs import lcs
-from toolbiox.lib.xuyuxing.math.set_operating import uniqify
-from toolbiox.lib.xuyuxing.math.stats import get_qvalue
+# from itertools import combinations
+# from mlxtend.evaluate import permutation_test
+# from scipy import stats
+# from yxtree import Clade, Phylo, reroot_by_outgroup_clade, add_clade_name, lookup_by_names, get_MRCA, remove_given_node_from_tree, remove_pass_node, get_offspring, draw_ascii, get_parent, get_ancestors, get_sons
+from yxutil import tsv_file_dict_parse, printer_list, log_print
+from yxmath.set import merge_subset, uniqify
+# from yxmath.stats import get_qvalue
+from yxmath import lcs
 import copy
-import numpy as np
+# import numpy as np
 import re
 import sqlite3
 import tarfile
 import time
-import toolbiox.lib.common.sqlite_command as sc
+import yxsql as sc
 
 # this list is from https://en.wikipedia.org/wiki/Taxonomic_rank
 RANK_LIST = [

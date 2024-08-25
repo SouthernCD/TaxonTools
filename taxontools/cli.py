@@ -1,5 +1,5 @@
 import argparse
-from taxontools.pipelines import *
+from .pipelines import *
 
 
 def args_init():

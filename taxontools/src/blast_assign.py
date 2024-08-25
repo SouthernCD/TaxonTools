@@ -1,10 +1,10 @@
 from itertools import combinations
 from mlxtend.evaluate import permutation_test
 from scipy import stats
-from toolbiox.lib.common.evolution.tree_operate import add_clade_name, lookup_by_names, get_MRCA, remove_pass_node, get_offspring, draw_ascii, get_parent, get_ancestors, get_sons
-from toolbiox.lib.common.math.set import merge_subset
-from toolbiox.lib.common.util import printer_list
-from toolbiox.lib.xuyuxing.math.stats import get_qvalue
+from yxtree import add_clade_name, lookup_by_names, get_MRCA, remove_pass_node, get_offspring, draw_ascii, get_parent, get_ancestors, get_sons
+from yxmath.set import merge_subset
+from yxutil import printer_list
+from yxmath.stats import get_qvalue
 import numpy as np
 
 

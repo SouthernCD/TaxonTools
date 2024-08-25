@@ -4,6 +4,12 @@ def get_versions():
 
 versions = [
     {
+        "number": "0.3.2",
+        "features": [
+            "1. Remove ToolBiox dependency",
+        ],
+    },
+    {
         "number": "0.2.2",
         "features": [
             "1. add get_offspring function in Taxon",

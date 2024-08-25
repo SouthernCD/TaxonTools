@@ -26,7 +26,13 @@ setuptools.setup(
     packages=setuptools.find_packages(),
 
     install_requires=[
-        "toolbiox>=0.0.42",
+        "yxtree",
+        "yxutil",
+        "yxmath",
+        "mlxtend>=0.17.2",
+        "scipy>=1.4.1",
+        "numpy>=1.18.1",
+        "biopython<=1.80",        
         # "thefuzz",
     ],
 
